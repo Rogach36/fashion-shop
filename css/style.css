@@ -78,6 +78,19 @@ h6 {
 	font-weight: 400;
 }
 
+._ibg {
+	position: relative;
+}
+
+._ibg img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
 body {
 	font-family: "Poppins";
 	font-weight: 500;
@@ -97,6 +110,12 @@ body {
 	"footer";
 }
 
+/* ._container {
+	max-width: 1300px;
+	padding: 0 15px;
+	margin:  0 auto;
+} */
+/*--------------------------Header-------------------------------*/
  .header {	
 	background-color: pink;
 	padding: 15px;
@@ -120,7 +139,6 @@ body {
 	display: grid;
 	grid-auto-flow: column;	
 }
-
 
 .menu__item {
 }
@@ -192,10 +210,198 @@ body {
 		margin-bottom: 10px;
 	}
 }
-
+/*--------------------------------Main---------------------------------*/
 .page {
-	background-color: aquamarine;
+	/* background-color: aquamarine; */
 	grid-area: main;
+	
+}
+
+.page__main-block {
+}
+.main-block {
+	display: grid;
+	grid-template: 1fr / 1fr minmax(auto, 725px) minmax(auto, 995px) 1fr;
+	padding: 77px 15px 90px 15px;
+	background-color: aqua;
+	position: relative;	
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center 10px;
+	background-image: url("../img/main-block/cover-bg.jpg");	
+}
+
+
+.main-block__body {
+	grid-column: 2 / 3;
+	max-width: 606px;
+	padding-left: 119px;
+	position: relative;
+	z-index: 88;
+}
+.main-block__title {
+	font-weight: 900;
+	font-size: 96px;
+	line-height: 125%;
+	z-index: 22;
+	position: relative;
+	margin-bottom: -241px;
+	}
+
+.main-block__word1 {
+	position: relative;
+	background-color: #FFFFFF;
+	top: -35%;
+	left: -20px;
+	display: inline-block;
+	width: 464.74px;
+	height: 125px;
+	/* z-index: 3; */
+	transform: rotate(-2deg);
+  }
+
+.main-block__word2 {
+	position: relative;
+	background-color: #EBD96B;
+	bottom: 18%;
+	left: -20px;
+	display: inline-block;
+	width: 464.74px;
+	height: 112.14px;
+	/* z-index: 3; */
+	transform: rotate(-2deg);
+}
+
+.main-block__subtitle {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 48px;
+	letter-spacing: -0.05em;
+	color: #191818;
+	margin-bottom: 32px;	
+}
+.main-block__button {
+	display: grid;
+	grid-template: minmax(auto, 82px) / minmax(224px, auto) 1fr;
+	align-items: center;
+	justify-items: center;
+	position: relative;
+}
+.button-main {
+	
+}
+.button-main__decor {
+	position: absolute;	
+	width: 190px;
+	height: 32px;
+	top: 29px;
+	left: 0;
+	background-image: url("../img/main-block/decor_1.svg");
+	background-repeat: no-repeat;
+	
+	}
+
+.button-main__button {
+	grid-column: 2 / 3;
+	font-size: 30px;
+	line-height: 150%;
+	letter-spacing: -0.05em;
+	color: #FFFFFF;
+	padding: 19px 41px;
+	background-color: #000;
+	border-radius: 10px;
+	min-height: 82px;
+	justify-self: start;
+}
+/* .main-block {
+	display: grid;
+	grid-template: 1fr / 1fr minmax(auto, 725px) minmax(auto, 995px) 1fr;
+	padding: 77px 15px 90px 15px;
+	background-color: aqua;
+	position: relative;	
+} */
+/* .main-block__image {
+	position: absolute;
+	z-index: 100;
+} */
+
+
+@media(max-width: 1574px) {
+	.main-block {
+		background-position: center center;
+		background-size: cover;
+	}
+}
+
+@media(max-width: 992px) {
+	.main-block__body {
+		padding-left: 26px;
+		max-width: 580px;
+	}
+		.main-block__title {
+		font-size: 77px;
+		line-height: 121%;	
+		margin-bottom: -162px;
+  }
+  .main-block__word1 {
+		top: -35%;
+		left: -20px;	
+		width: 337px;
+		height: 96px;
+}
+.main-block__word2 {	
+	bottom: 21%;
+	left: -20px;
+	width: 337px;
+	height: 96px;	
+}
+
+@media (max-width: 586px) {
+	.main-block {
+		/* opacity: 0.8; */
+		z-index: 12;
+	}
+	.main-block__title {
+		margin-bottom: -152px;
+  }
+  .main-block__subtitle {	
+	margin-bottom: 48px;
+}
+  .main-block__word1 {
+	top: -36%;
+	}
+
+	.main-block__word2 {
+		bottom: 21%;
+	}
+	.button-main__button {		
+		padding: 19px;
+  }
+  .button-main__decor {	
+	display: none;
+}
+.main-block__button {
+	display: block;
+}
+}
+
+
+@media (max-width: 479px) {
+	.main-block__title {
+		font-size: 60px;
+	}
+	.main-block__word1 {
+		top: -28%;
+		width: 292px;
+		height: 81px;
+		}
+	
+		.main-block__word2 {
+			bottom: 16%;
+			width: 292px;
+			height: 81px;
+		}
+
 }
 
 .footer {
