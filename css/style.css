@@ -97,7 +97,7 @@ body {
 	font-size: 24px;
 	line-height: 1;
 	color: #000;
-	background-color: rgb(78, 75, 75);
+	background-color: #fff;
 } 
 
 .wrapper {
@@ -229,12 +229,13 @@ body {
 	display: grid;
 	grid-template: 1fr / 1fr minmax(auto, 725px) minmax(auto, 995px) 1fr;
 	padding: 77px 15px 90px 15px;
-	background-color: aqua;
 	position: relative;
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center 10px;
 	background-image: url("../img/main-block/cover-bg.jpg");	
+	/* margin-bottom: 63px; */
+
 }
 
 
@@ -404,27 +405,35 @@ body {
 .page__partners {
 }
 .partners {
+	padding-top: 61px;
+	padding-bottom: 69px
+	
+}
+.partners__cover {
 	display: grid;
-	grid-template: 1fr / 1fr minmax(auto, 1720px) 1fr;
-	/* grid-template: 1fr / 1fr minmax(auto, 725px) minmax(auto, 995px) 1fr; */
+	grid-template: minmax(249px, 1fr) / 1fr minmax(auto, 1720px) 1fr;
+	background-color: #EBD96B;
 }
 .partners__row {
 	padding: 61px 71px 54px;
-	grid-column: 2 / 3;
+	grid-column: 2 / 3;	
 	display: grid;
-	grid-template: 1fr / repeat(6, auto);
-}
-.partners__item:not(:last-child) {
-	margin-right: 121px;
+	grid-template-columns: repeat(auto-fit, minmax(190px, auto)); 	/*поделил ширину блока с партнерами (без боковых паддингов) на количество колонок,
+	получил 190px сделал этот размер минимальным,а макс. авто и autofit для заполнения и растягивания колонок на все пространства блока партнеров*/
+	align-items: center;
+	justify-items: center;
 }
 
+.partners__item:not(:last-child) {
+	margin-bottom: 30px;
+}
 .footer {
 	grid-area: footer;
 	background-color: yellow;
 }
 
 .page__partners {
-	background-color: aqua;
+	/* background-color: aqua; */
 }
 
 .partners__item img {
