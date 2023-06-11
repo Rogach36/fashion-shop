@@ -115,6 +115,19 @@ body {
 	padding: 0 15px;
 	margin:  0 auto;
 } */
+
+._ibg {
+	position: relative;
+}
+
+._ibg img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
 /*--------------------------Header-------------------------------*/
  .header {	
 	background-color: pink;
@@ -156,6 +169,7 @@ body {
 	line-height: 150%;
 	letter-spacing: -0.03em;
 	background-color: #000;
+	border: 1px solid #000;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
@@ -225,6 +239,8 @@ body {
 }
 .page__arrivals {
 }
+.page__payday {
+}
 /*--------------------------------Main---------------------------------*/
 .page {
 	grid-area: main;	
@@ -234,7 +250,7 @@ body {
 	display: grid;
 	grid-template: 1fr / 1fr minmax(auto, 725px) minmax(auto, 995px) 1fr;
 	padding: 77px 15px 90px 15px;
-	position: relative;
+	/* position: relative; */
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center 10px;
@@ -244,8 +260,8 @@ body {
 	grid-column: 2 / 3;
 	max-width: 606px;
 	padding-left: 119px;
-	position: relative;
-	z-index: 88;
+	/* position: relative; */
+	/* z-index: 88; */
 }
 .main-block__title {
 	font-weight: 900;
@@ -294,6 +310,7 @@ body {
 	justify-items: center;
 	position: relative;
 }
+
 .button-main {
 	
 }
@@ -315,9 +332,17 @@ body {
 	color: #FFFFFF;
 	padding: 19px 41px;
 	background-color: #000;
+	border: 1px solid #000;
 	border-radius: 10px;
 	min-height: 82px;
 	justify-self: start;
+	transition: all 0.3s ease 0s;	
+}
+
+.button-main__button:hover {
+	color: #242323;
+	background-color: #FEFEFE;
+	border: 1px solid #242323;
 }
 
 @media(max-width: 1574px) {
@@ -444,6 +469,7 @@ body {
 	line-height: 104%;	
 	position: relative;
 	z-index: 10;
+	text-transform: uppercase;
 }
 
 .arrivals__decor {	
@@ -460,22 +486,18 @@ body {
 	z-index: 5;
 }
 
-
-
-
 /*----------------------Свойства для блока с карточками 
 (медиазапросы для адаптации не понадобились)------------------*/
 .arrivals__row {
 	grid-column: 2 / 3;
 	display: grid;	
-	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	column-gap: 90px;
 	row-gap: 50px;	
 	padding: 0 15px;
 }
 .arrivals__item {
 	display: grid;
-	/* grid-auto-flow: row; */
 	grid-template: auto 1fr minmax(64px, auto);	
 }
 .arrivals__image {
@@ -493,6 +515,17 @@ body {
 	object-fit: cover;
 	border-radius: 20px;
 }
+
+@media(max-width: 1111px) {
+	.arrivals {		
+		padding-bottom: 90px;
+  }
+	.arrivals__row {		
+		grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));		
+		justify-self: center;
+	}
+
+} 
 /*----------------------------------------------------------*/
 
 .arrivals__text {
@@ -517,6 +550,176 @@ body {
 		margin-bottom: 50px;
   }
 }
+
+/*--------------------------Payday------------------*/
+
+.payday {
+	display: grid;
+	grid-template: minmax(500px, 968px) / 1fr minmax(auto, 1720px) 1fr;
+	justify-items: end;
+	background-color: #F9DF56;
+	position: relative;
+}
+
+.payday__body {
+	grid-column: 2 / 3;
+	max-width: 671px;
+	padding: 128px 15px 0;	
+	/* position: relative; */
+	z-index: 6;
+}
+.payday__text {
+	
+}
+.text-payday {
+}
+.text-payday__title {	
+	font-weight: 900;
+	font-size: 112px;
+	line-height: 123%;
+	margin-bottom: 33px;	
+	grid-row: 1 / 2;
+	position: relative;
+	z-index: 17;
+}
+
+.text-payday__title::after{
+	content: "";
+	position: absolute;
+	background-color: #FFFFFF;
+	opacity: 1;
+	top: 0;
+	left: -4%;
+	display: inline-block;
+	width: 542px;
+	height: 131px;
+	transform: rotate(-2deg);
+	z-index: -10;
+}
+
+.text-payday__text {
+	font-size: 36px;
+	line-height: 145%;
+	letter-spacing: -0.02em;
+	color: #231300;	
+	margin-bottom: 40.6px;
+	grid-row: 2 / 3;
+}
+.text-payday__subtitle {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 145%;
+	letter-spacing: -0.02em;	
+	margin-bottom: 10.6px;
+	grid-row: 2 / 3;
+	color: #000000;
+}
+
+.text-payday__notice {
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 145%;
+	letter-spacing: -0.02em;
+	margin-bottom: 51px;
+	grid-row: 2 / 3;
+}
+.text-payday__button {
+	font-weight: 600;
+	font-size: 27px;
+	line-height: 155.5%;
+	letter-spacing: -0.05em;
+	color: #FFFFFF;
+	padding: 26px 51px;
+	background-color: #000;
+	border: 1px solid #000;
+	border-radius: 8px;
+	min-height: 95.3px;
+	letter-spacing: 0.02em;
+	grid-row: 3 / 4;
+	margin-bottom: 155px;
+	transition: all 0.3s ease 0s;	
+}
+
+.text-payday__button:hover {
+	color: #242323;
+	background-color: #FEFEFE;
+	border: 1px solid #242323;
+}
+
+
+.button-main__button {	
+}
+
+.payday__image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	object-fit: cover;
+	grid-column: 1 / -1;
+	grid-row: 1 / -1;	
+}
+
+.payday__image img {
+	object-position: 12%;
+}
+
+@media (min-width: 1932px) {
+	.payday__image img {
+		object-position: top;
+	}
+	.payday__image img {
+		object-position: 33% top;
+  }
+}
+
+@media (max-width: 1205px) {
+	.payday__body {
+		/*grid-column: 1 / 2;*/	
+		padding-left: 25px;	
+	} 
+	.payday__image {
+		opacity: 0.6;
+	}	
+	.payday__image img {
+		object-position: 51%;
+  }
+}
+
+@media (max-width: 992px) {
+	.payday__body {
+		padding-top: 227px;
+		max-width: 610px;		
+  }
+	.text-payday__title {
+		font-weight: 700;
+		font-size: 85px;
+		line-height: 105%;
+  }
+  .text-payday__title::after {	
+	width: 430px;
+	height: 88px;	
+}
+.text-payday__text {
+	font-size: 33px;
+	line-height: 135%;	
+}
+.text-payday__subtitle {	
+	font-size: 33px;
+	line-height: 135%;
+}
+.text-payday__notice {	
+	font-size: 33px;
+	line-height: 135%;
+}
+	.payday__image img {
+		object-position: 33%;
+  }
+}
+
+
+
 
 /*---------------------Footer----------------------*/
 .footer {
