@@ -243,6 +243,8 @@ body {
 }
 .page__favourite {
 }
+.page__voucher {
+}
 /*--------------------------------Main---------------------------------*/
 .page {
 	grid-area: main;	
@@ -838,6 +840,103 @@ body {
 	left: 0;
 	object-fit: cover;
 	border-radius: 20px;
+}
+
+/*-------------------Voucher---------------------*/
+
+.voucher {
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, 1720px) 1fr;
+	padding: 110px 15px;
+}
+.voucher__body {
+	grid-column: 2 / 3;
+	display: grid;
+	padding: 0 103px;
+	grid-template-rows: minmax(710, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.voucher__text {
+	display: grid;
+	grid-template-rows: 185px 102px 136px;
+	align-items: end;
+	padding-top: 178px;
+	padding-bottom: 148px;
+	max-width: 507px;
+}
+.text-voucher {
+	grid-column: 2 / 3;
+}
+.text-voucher__title {
+	font-weight: 900;
+	font-size: 48px;
+	line-height: 150%;
+	letter-spacing: 0.06em;	
+	align-self: start;
+}
+
+.text-voucher__offer {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 146%;
+	letter-spacing: -0.04em;
+	color: #7C7C7C;
+}
+
+.text-voucher__app img:not(:last-child) {
+	margin-right: 19px;
+}
+.voucher__image {
+	grid-column: 3 / 4;
+}
+
+.voucher__image  {
+	position: relative;
+	padding: 0 0 131.4% 0;
+	
+}
+.voucher__image img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media(max-width: 1070px) {
+	.voucher__text {		
+		grid-template-rows: minmax(185px, 288px) 102px 136px;	
+	}
+}
+
+
+@media(max-width: 1273px) {
+	.voucher__body {
+		padding: 0 20px;
+	}	
+}
+
+@media (max-width: 985px) {
+	.voucher {
+		padding: 50px 15px;
+  }
+	.voucher__body {
+		padding: 0;
+	}
+	.voucher__text {
+		padding: 0 0 50px 0;
+		grid-template-rows: 185px 102px 136px;
+		margin: 0 auto;
+	}
+	.text-voucher {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+	.voucher__image  {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
+	}
 }
 
 /*---------------------Footer----------------------*/
