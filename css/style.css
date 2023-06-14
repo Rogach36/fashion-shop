@@ -130,7 +130,6 @@ body {
 }
 /*--------------------------Header-------------------------------*/
  .header {	
-	background-color: pink;
 	padding: 15px;
 } 
 
@@ -185,8 +184,7 @@ body {
 
 @media(min-width: 992px) {
 	.header {
-		grid-area: header;
-		background-color: pink;
+		grid-area: header;		
 		display: grid;
 		grid-template: 1fr / 1fr minmax(auto, 878.26px) minmax(auto, 840px) 1fr;
 		align-items: center;
