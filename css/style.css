@@ -90,7 +90,7 @@ h6 {
 	left: 0;
 	object-fit: cover;
 }
-
+/*-------------------------TEST------------------------------*/
 body {
 	font-family: "Poppins";
 	font-weight: 500;
@@ -1020,7 +1020,7 @@ body {
 	display: grid;
 	background-color: #f5f5f5;
 	grid-template: 1fr / 1fr minmax(auto, 1720px) 1fr;
-	padding: 119px 100px 147px;
+	padding: 119px 15px 147px;
 	background-color: #000;
 }
 
@@ -1028,14 +1028,14 @@ body {
 .footer__body {
 	grid-column: 2 / 3;
 	display: grid;
-	column-gap: 188px;
-	grid-template: 1fr / minmax(415px, 440px) 39px minmax(133px, auto) minmax(193px, auto) minmax(235px,auto);	
+	column-gap: 188px;	
+	/* 1 вариант - grid-template: 1fr / minmax(415px, 440px) 39px minmax(133px, auto) minmax(193px, auto) minmax(235px,auto);	 */
+	grid-template: 1fr / minmax(415px, 440px) 39px minmax(133px, 140px) minmax(176px, 193px) minmax(auto, 235px);	
 }
 .footer__column {
 	padding-top: 6px;
 }
-.footer__column--logo {
-	grid-column: 1 / 2;	
+.footer__column--logo {	
 	padding-top: 0;
 }
 .footer__column--logo >*:not(:last-child) {
